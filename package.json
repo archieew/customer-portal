@@ -1,0 +1,16 @@
+{
+  "name": "customer-portal-poc",
+  "version": "1.0.0",
+  "description": "Customer Portal POC with Next.js, Express.js, and ServiceM8 integration",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start"
+  },
+  "keywords": ["servicem8", "customer-portal", "nextjs", "express"],
+  "license": "MIT"
+}
+

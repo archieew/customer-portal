@@ -1,0 +1,146 @@
+/* 
+ * Global Styles for Customer Portal
+ * Uses Tailwind CSS with custom design tokens
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import custom font - Outfit for modern, friendly look */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* =============================================================================
+   BASE STYLES
+   ============================================================================= */
+
+:root {
+  /* CSS custom properties for theming */
+  --color-bg-primary: #0f1419;
+  --color-bg-secondary: #1a2029;
+  --color-bg-tertiary: #242d39;
+  --color-text-primary: #f0f4f8;
+  --color-text-secondary: #94a3b8;
+  --color-border: #2d3a4a;
+  --color-brand: #009999;
+  --color-accent: #ffb800;
+}
+
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+}
+
+/* =============================================================================
+   COMPONENT STYLES
+   ============================================================================= */
+
+@layer components {
+  /* Primary button style */
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-500 text-white font-medium py-3 px-6 rounded-lg 
+           transition-all duration-200 shadow-lg shadow-brand-600/25
+           active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Secondary button style */
+  .btn-secondary {
+    @apply bg-transparent border border-brand-600 text-brand-400 hover:bg-brand-600/10
+           font-medium py-3 px-6 rounded-lg transition-all duration-200
+           active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Card component */
+  .card {
+    @apply bg-[--color-bg-secondary] border border-[--color-border] rounded-xl p-6
+           shadow-xl shadow-black/20;
+  }
+
+  /* Form input style */
+  .form-input {
+    @apply w-full bg-[--color-bg-tertiary] border border-[--color-border] rounded-lg 
+           px-4 py-3 text-[--color-text-primary] placeholder-[--color-text-secondary]
+           focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  /* Status badge styles */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide;
+  }
+
+  .badge-completed {
+    @apply badge bg-emerald-500/20 text-emerald-400;
+  }
+
+  .badge-pending {
+    @apply badge bg-amber-500/20 text-amber-400;
+  }
+
+  .badge-quote {
+    @apply badge bg-blue-500/20 text-blue-400;
+  }
+
+  .badge-work-order {
+    @apply badge bg-purple-500/20 text-purple-400;
+  }
+}
+
+/* =============================================================================
+   ANIMATIONS
+   ============================================================================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Staggered animation delays for lists */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* =============================================================================
+   SCROLLBAR STYLING
+   ============================================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-secondary);
+}
+
