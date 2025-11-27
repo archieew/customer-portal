@@ -1,6 +1,6 @@
 # Customer Portal POC
 
-A minimal Customer Portal proof-of-concept demonstrating integration with ServiceM8 API.
+A functional proof-of-concept (POC) for a minimal Customer Portal.
 
 ---
 
