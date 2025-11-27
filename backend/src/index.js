@@ -24,11 +24,7 @@ const PORT = process.env.PORT || 3001;
 
 // Enable CORS for frontend communication
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    process.env.FRONTEND_URL,
-    /\.vercel\.app$/  // Allow all Vercel preview URLs
-  ].filter(Boolean),
+  origin: true,  // Allow all origins for POC (in production, restrict this)
   credentials: true
 }));
 
